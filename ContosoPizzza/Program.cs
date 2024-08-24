@@ -24,9 +24,14 @@ var veggieSpecial = context.Products
     .Where(p => p.Name == "Veggie Special Pizza")
     .FirstOrDefault();
 
-if(veggieSpecial is Product)
+//if(veggieSpecial is Product)
+//{
+//    veggieSpecial.Price = 10.99M;
+//}
+
+if (veggieSpecial is Product)
 {
-    veggieSpecial.Price = 10.99M;
+    context.Remove(veggieSpecial);
 }
 
 context.SaveChanges();
