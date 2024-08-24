@@ -20,8 +20,18 @@ using ContosoPizzaContext context = new ContosoPizzaContext();
 //context.Add(deluxeMeat);
 //context.SaveChanges();
 
-var products =
-    //context.Products
+var veggieSpecial = context.Products
+    .Where(p => p.Name == "Veggie Special Pizza")
+    .FirstOrDefault();
+
+if(veggieSpecial is Product)
+{
+    veggieSpecial.Price = 10.99M;
+}
+
+context.SaveChanges();
+
+var products = //context.Products
     //.Where(p => p.Price > 10.00M)
     //.OrderBy(p => p.Name);
     from product in context.Products
