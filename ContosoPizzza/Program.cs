@@ -32,8 +32,8 @@ var products =
 foreach(Product p in products)
 {
     Console.WriteLine($"Id:    {p.Id}");
-    Console.WriteLine($"Name:  {p.Id}");
-    Console.WriteLine($"Price: {p.Id}");
+    Console.WriteLine($"Name:  {p.Name}");
+    Console.WriteLine($"Price: {p.Price}");
     Console.WriteLine(new string('-', 20));
 }
 
